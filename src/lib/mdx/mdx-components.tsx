@@ -1,3 +1,4 @@
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import CodeBlock from '@/components/mdx/CodeBlock';
@@ -40,9 +41,21 @@ const components = {
       </h3>
     );
   },
-  p: ({ children }: { children: React.ReactNode }) => (
-    <p className="my-4 leading-relaxed">{children}</p>
-  ),
+  p: ({ children }: { children: React.ReactNode }) => {
+    // Check if children contains elements that shouldn't be wrapped in <p>
+    const hasBlockElement = React.Children.toArray(children).some((child: any) => {
+      return child?.type === 'img' || 
+             child?.props?.mdxType === 'img' ||
+             child?.type?.name === 'img';
+    });
+    
+    // If contains block elements, return fragment instead of <p>
+    if (hasBlockElement) {
+      return <>{children}</>;
+    }
+    
+    return <p className="my-4 leading-relaxed">{children}</p>;
+  },
   a: ({ href, children }: { href: string; children: React.ReactNode }) => {
     const isInternal = href?.startsWith('/');
     if (isInternal) {

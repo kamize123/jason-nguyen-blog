@@ -122,3 +122,13 @@ code:not([class*="language-"]) {
   font-size: 0.875rem;
   border: 1px solid #cbd5e1; /* slate-300 */
 }
+
+/* Hide scrollbar utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

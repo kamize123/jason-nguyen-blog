@@ -1,0 +1,51 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "title": "Atomic Habits",
+      "author": "James Clear",
+      "coverImage": "https://m.media-amazon.com/images/I/81YkqyaFVEL._AC_UF1000,1000_QL80_.jpg",
+      "rating": 5,
+      "status": "completed",
+      "dateStarted": "2023-01-15",
+      "dateCompleted": "2023-02-10",
+      "goodreadsUrl": "https://www.goodreads.com/book/show/40121378-atomic-habits",
+      "favorite": true
+    },
+    {
+      "id": 2,
+      "title": "Sapiens: A Brief History of Humankind",
+      "author": "Yuval Noah Harari",
+      "coverImage": "https://m.media-amazon.com/images/I/713jIoMO3UL._AC_UF1000,1000_QL80_.jpg",
+      "rating": 5,
+      "status": "completed",
+      "dateStarted": "2023-06-01",
+      "dateCompleted": "2023-07-20",
+      "goodreadsUrl": "https://www.goodreads.com/book/show/23692271-sapiens",
+      "favorite": true
+    },
+    {
+      "id": 3,
+      "title": "Clean Code: A Handbook of Agile Software Craftsmanship",
+      "author": "Robert C. Martin",
+      "coverImage": "https://m.media-amazon.com/images/I/71T7aD3EOTL._AC_UF1000,1000_QL80_.jpg",
+      "rating": 4,
+      "status": "completed",
+      "dateStarted": "2022-09-10",
+      "dateCompleted": "2022-10-15",
+      "goodreadsUrl": "https://www.goodreads.com/book/show/3735293-clean-code",
+      "favorite": false
+    },
+    {
+      "id": 4,
+      "title": "Deep Work: Rules for Focused Success in a Distracted World",
+      "author": "Cal Newport",
+      "coverImage": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=400&h=600&fit=crop",
+      "rating": 5,
+      "status": "reading",
+      "dateStarted": "2024-01-05",
+      "goodreadsUrl": "https://www.goodreads.com/book/show/25744928-deep-work",
+      "favorite": false
+    }
+  ]
+}

@@ -23,6 +23,11 @@ export const metadata: Metadata = {
   keywords: ['Software Engineering', 'Web Development', 'JavaScript', 'React', 'Next.js', 'TypeScript'],
   authors: [{ name: 'Jason Nguyen' }],
   creator: 'Jason Nguyen',
+  icons: {
+    icon: [{ url: '/hero.jpg', type: 'image/jpeg', sizes: 'any' }],
+    shortcut: '/hero.jpg',
+    apple: '/hero.jpg',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',

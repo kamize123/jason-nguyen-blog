@@ -48,17 +48,17 @@ export default function HomeClient({ userInfo, featuredPosts }: HomeClientProps)
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-white text-gray-900 overflow-hidden selection:bg-blue-100">
+    <div ref={containerRef} className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 overflow-hidden selection:bg-blue-100 dark:selection:bg-blue-900">
       
       {/* Abstract Background Elements */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         <motion.div 
           style={{ y: y1, opacity }}
-          className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-gradient-to-br from-blue-100 to-purple-100 blur-[100px]"
+          className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-gradient-to-br from-blue-100 dark:from-blue-950 to-purple-100 dark:to-purple-950 blur-[100px]"
         />
         <motion.div 
           style={{ y: y2, opacity }}
-          className="absolute bottom-[10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-emerald-100 to-cyan-100 blur-[120px]"
+          className="absolute bottom-[10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-emerald-100 dark:from-emerald-950 to-cyan-100 dark:to-cyan-950 blur-[120px]"
         />
       </div>
 
@@ -84,7 +84,7 @@ export default function HomeClient({ userInfo, featuredPosts }: HomeClientProps)
                   </h1>
                 </motion.div>
 
-                <motion.div variants={fadeInUp} className="text-xl md:text-2xl text-gray-600 h-20">
+                <motion.div variants={fadeInUp} className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 h-20">
                   <TypewriterEffect 
                     sentences={userInfo.introduction}
                     speed={80}
@@ -95,13 +95,13 @@ export default function HomeClient({ userInfo, featuredPosts }: HomeClientProps)
                 <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
                   <Link
                     href="/blog"
-                    className="px-8 py-4 rounded-full bg-gray-900 text-white font-medium hover:scale-105 transition-transform duration-200 shadow-lg hover:shadow-xl"
+                    className="px-8 py-4 rounded-full bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 font-medium hover:scale-105 transition-transform duration-200 shadow-lg hover:shadow-xl"
                   >
                     Read the Blog
                   </Link>
                   <Link
                     href="/about"
-                    className="px-8 py-4 rounded-full border border-gray-200 hover:border-gray-400 font-medium hover:scale-105 transition-transform duration-200 backdrop-blur-sm"
+                    className="px-8 py-4 rounded-full border border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 font-medium hover:scale-105 transition-transform duration-200 backdrop-blur-sm"
                   >
                     About Me
                   </Link>
@@ -114,8 +114,8 @@ export default function HomeClient({ userInfo, featuredPosts }: HomeClientProps)
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
                 className="relative h-[400px] md:h-[500px] w-full hidden md:block"
               >
-                <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-purple-500/10 rounded-3xl transform rotate-3 scale-95" />
-                <div className="absolute inset-0 bg-gray-50 rounded-3xl overflow-hidden shadow-2xl border border-gray-200 backdrop-blur-sm">
+                <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-purple-500/10 dark:from-blue-500/5 dark:to-purple-500/5 rounded-3xl transform rotate-3 scale-95" />
+                <div className="absolute inset-0 bg-gray-50 dark:bg-gray-800 rounded-3xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-700 backdrop-blur-sm">
                    <Image
                     src="/hero.jpg"
                     alt="Hero image"

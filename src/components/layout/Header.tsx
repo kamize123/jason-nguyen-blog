@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import SearchBar from '@/components/SearchBar';
+import ThemeToggle from '@/components/ui/ThemeToggle';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -11,6 +12,7 @@ const navigation = [
   { name: 'List 100', href: '/collections' },
   { name: 'Products', href: '/products' },
   { name: 'Blog', href: '/blog' },
+  { name: 'TOEIC Guild', href: '/toeic-guild' },
   { name: 'About', href: '/about#career' },
 ];
 
@@ -18,7 +20,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="border-b border-gray-100 py-3 sm:py-5">
+    <header className="border-b border-gray-100 dark:border-gray-800 py-3 sm:py-5 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Desktop & Mobile Top Bar */}
         <div className="flex items-center justify-between gap-4">
@@ -50,17 +52,18 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium hover:text-gray-700 transition-colors"
+                className="text-sm font-medium hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
               >
                 {item.name}
               </Link>
             ))}
+            <ThemeToggle />
           </nav>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-md hover:bg-gray-100"
+            className="lg:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
             aria-label="Toggle menu"
           >
             <svg 
@@ -90,7 +93,7 @@ export default function Header() {
         
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden pt-4 pb-2 border-t border-gray-100 mt-3">
+          <div className="lg:hidden pt-4 pb-2 border-t border-gray-100 dark:border-gray-800 mt-3">
             {/* Mobile Search */}
             <div className="md:hidden mb-3">
               <SearchBar />
@@ -103,11 +106,15 @@ export default function Header() {
                   key={item.name}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block px-3 py-2 text-base font-medium hover:bg-gray-50 rounded-md transition-colors"
+                  className="block px-3 py-2 text-base font-medium hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md transition-colors"
                 >
                   {item.name}
                 </Link>
               ))}
+              <div className="px-3 py-2 flex items-center gap-2">
+                <span className="text-sm text-gray-600 dark:text-gray-400">Theme:</span>
+                <ThemeToggle />
+              </div>
             </div>
           </div>
         )}

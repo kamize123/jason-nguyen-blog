@@ -54,7 +54,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans bg-white text-gray-900`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300`}
       >
         {gaId && <GoogleAnalytics measurementId={gaId} />}
         <Providers>{children}</Providers>

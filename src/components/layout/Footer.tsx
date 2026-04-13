@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import NewsletterForm from '@/components/blog/NewsletterForm';
 
 const footerNavigation = {
   main: [
@@ -35,14 +36,23 @@ const footerNavigation = {
 
 export default function Footer() {
   return (
-    <footer className="bg-white">
+    <footer className="bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
       <div className="mx-auto max-w-7xl py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
+        {/* Newsletter Section */}
+        <div className="mb-12 text-center">
+          <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-gray-100">Stay Updated</h3>
+          <p className="text-gray-600 dark:text-gray-400 mb-6">
+            Get the latest articles delivered to your inbox.
+          </p>
+          <NewsletterForm variant="default" />
+        </div>
+
         <nav className="flex flex-wrap justify-center">
           {footerNavigation.main.map((item) => (
             <div key={item.name} className="px-5 py-2">
               <Link 
                 href={item.href} 
-                className="text-base text-gray-500 hover:text-gray-900"
+                className="text-base text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"
               >
                 {item.name}
               </Link>
@@ -51,14 +61,14 @@ export default function Footer() {
         </nav>
         <div className="mt-8 flex justify-center space-x-6">
           {footerNavigation.social.map((item) => (
-            <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-500">
+            <a key={item.name} href={item.href} className="text-gray-400 dark:text-gray-500 hover:text-gray-500 dark:hover:text-gray-400">
               <span className="sr-only">{item.name}</span>
               <item.icon className="h-6 w-6" aria-hidden="true" />
             </a>
           ))}
         </div>
-        <p className="mt-8 text-center text-base text-gray-500">
-          &copy; {new Date().getFullYear()} Jasonn Nguyen. All rights reserved.
+        <p className="mt-8 text-center text-base text-gray-500 dark:text-gray-400">
+          &copy; {new Date().getFullYear()} Jason Nguyen. All rights reserved.
         </p>
       </div>
     </footer>

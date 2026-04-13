@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence, Variants } from "framer-motion";
@@ -36,15 +37,30 @@ const staggerContainer: Variants = {
 };
 
 export default function BlogClient({ posts }: BlogClientProps) {
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
 
-  // Extract all unique tags
+  useEffect(() => {
+    const tagFromUrl = searchParams.get('tag');
+    if (tagFromUrl) {
+      setSelectedTag(tagFromUrl);
+    }
+  }, [searchParams]);
+
+  // Extract all unique tags with counts
   const allTags = useMemo(() => {
-    const tags = new Set<string>();
-    posts.forEach(post => post.tags?.forEach(tag => tags.add(tag)));
-    return Array.from(tags).sort();
+    const tagCounts = new Map<string, number>();
+    posts.forEach(post => {
+      post.tags?.forEach(tag => {
+        tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+      });
+    });
+    return Array.from(tagCounts.entries())
+      .sort((a, b) => a[0].localeCompare(b[0]))
+      .map(([tag, count]) => ({ tag, count }));
   }, [posts]);
 
   // Filter posts
@@ -69,12 +85,23 @@ export default function BlogClient({ posts }: BlogClientProps) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleTagClick = (tag: string | null) => {
+    setSelectedTag(tag);
+    setCurrentPage(1);
+    
+    if (tag) {
+      router.push(`/blog?tag=${encodeURIComponent(tag)}`, { scroll: false });
+    } else {
+      router.push('/blog', { scroll: false });
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-white text-gray-900 selection:bg-blue-100 flex flex-col">
+    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 selection:bg-blue-100 dark:selection:bg-blue-900 flex flex-col">
       {/* Abstract Background */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-blue-50 to-transparent opacity-50 blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-purple-50 to-transparent opacity-50 blur-3xl" />
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-blue-50 dark:from-blue-950 to-transparent opacity-50 blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-purple-50 dark:from-purple-950 to-transparent opacity-50 blur-3xl" />
       </div>
 
       <div className="relative z-10 flex flex-col min-h-screen">
@@ -92,7 +119,7 @@ export default function BlogClient({ posts }: BlogClientProps) {
               <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
                 Writing
               </motion.h1>
-              <motion.p variants={fadeInUp} className="text-xl text-gray-500 leading-relaxed">
+              <motion.p variants={fadeInUp} className="text-xl text-gray-500 dark:text-gray-400 leading-relaxed">
                 Thoughts on software engineering, design patterns, and the future of web development.
               </motion.p>
             </motion.div>
@@ -110,37 +137,37 @@ export default function BlogClient({ posts }: BlogClientProps) {
                   placeholder="Search articles..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full px-6 py-4 bg-white border border-gray-200 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
+                  className="w-full px-6 py-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
                 />
-                <svg className="absolute right-6 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="absolute right-6 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </div>
 
               <div className="flex flex-wrap justify-center gap-2">
                 <button
-                  onClick={() => setSelectedTag(null)}
+                  onClick={() => handleTagClick(null)}
                   className={cn(
                     "px-4 py-2 rounded-full text-sm font-medium transition-all",
                     !selectedTag 
-                      ? "bg-gray-900 text-white shadow-md" 
-                      : "bg-white text-gray-600 hover:bg-gray-50 border border-gray-200"
+                      ? "bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 shadow-md" 
+                      : "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700"
                   )}
                 >
-                  All
+                  All ({posts.length})
                 </button>
-                {allTags.map(tag => (
+                {allTags.map(({ tag, count }) => (
                   <button
                     key={tag}
-                    onClick={() => setSelectedTag(tag === selectedTag ? null : tag)}
+                    onClick={() => handleTagClick(tag === selectedTag ? null : tag)}
                     className={cn(
                       "px-4 py-2 rounded-full text-sm font-medium transition-all",
                       tag === selectedTag 
-                        ? "bg-gray-900 text-white shadow-md" 
-                        : "bg-white text-gray-600 hover:bg-gray-50 border border-gray-200"
+                        ? "bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 shadow-md" 
+                        : "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700"
                     )}
                   >
-                    {tag}
+                    {tag} ({count})
                   </button>
                 ))}
               </div>
@@ -160,7 +187,7 @@ export default function BlogClient({ posts }: BlogClientProps) {
                   {currentPosts.map((post) => (
                     <motion.div variants={fadeInUp} key={post.slug}>
                       <Link href={`/blog/${post.slug}`} className="group block h-full">
-                        <div className="h-full bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col">
+                        <div className="h-full bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col">
                           <div className="relative h-56 overflow-hidden">
                             <Image
                               src={post.thumbnail || '/thumbnails/default.jpg'}
@@ -172,7 +199,7 @@ export default function BlogClient({ posts }: BlogClientProps) {
                           </div>
                           
                           <div className="p-8 flex flex-col flex-grow">
-                            <div className="flex items-center gap-3 text-sm text-gray-500 mb-4">
+                            <div className="flex items-center gap-3 text-sm text-gray-500 dark:text-gray-400 mb-4">
                               <time dateTime={post.date}>
                                 {new Date(post.date).toLocaleDateString("en-US", {
                                   month: "long",
@@ -184,17 +211,17 @@ export default function BlogClient({ posts }: BlogClientProps) {
                               <span>{post.readingTime}</span>
                             </div>
                             
-                            <h3 className="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors leading-tight">
+                            <h3 className="text-xl font-bold mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors leading-tight">
                               {post.title}
                             </h3>
                             
-                            <p className="text-gray-600 line-clamp-3 mb-6 flex-grow leading-relaxed">
+                            <p className="text-gray-600 dark:text-gray-300 line-clamp-3 mb-6 flex-grow leading-relaxed">
                               {post.description}
                             </p>
 
                             <div className="flex flex-wrap gap-2 mt-auto">
                               {post.tags?.slice(0, 2).map(tag => (
-                                <span key={tag} className="text-xs font-medium px-2.5 py-1 bg-gray-50 text-gray-600 rounded-md">
+                                <span key={tag} className="text-xs font-medium px-2.5 py-1 bg-gray-50 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-md">
                                   {tag}
                                 </span>
                               ))}
@@ -211,10 +238,10 @@ export default function BlogClient({ posts }: BlogClientProps) {
                   animate={{ opacity: 1 }}
                   className="text-center py-32"
                 >
-                  <p className="text-xl text-gray-500">No articles found matching your criteria.</p>
+                  <p className="text-xl text-gray-500 dark:text-gray-400">No articles found matching your criteria.</p>
                   <button 
-                    onClick={() => { setSearchQuery(""); setSelectedTag(null); }}
-                    className="mt-4 text-blue-600 hover:underline font-medium"
+                    onClick={() => { setSearchQuery(""); handleTagClick(null); }}
+                    className="mt-4 text-blue-600 dark:text-blue-400 hover:underline font-medium"
                   >
                     Clear filters
                   </button>
@@ -228,7 +255,7 @@ export default function BlogClient({ posts }: BlogClientProps) {
                 <button
                   onClick={() => handlePageChange(currentPage - 1)}
                   disabled={currentPage === 1}
-                  className="p-3 rounded-full border border-gray-200 hover:bg-gray-50 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                  className="p-3 rounded-full border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -242,8 +269,8 @@ export default function BlogClient({ posts }: BlogClientProps) {
                     className={cn(
                       "w-11 h-11 rounded-full font-medium transition-all",
                       currentPage === page
-                        ? "bg-gray-900 text-white shadow-md"
-                        : "bg-white text-gray-600 hover:bg-gray-50 border border-gray-200"
+                        ? "bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 shadow-md"
+                        : "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700"
                     )}
                   >
                     {page}
@@ -253,7 +280,7 @@ export default function BlogClient({ posts }: BlogClientProps) {
                 <button
                   onClick={() => handlePageChange(currentPage + 1)}
                   disabled={currentPage === totalPages}
-                  className="p-3 rounded-full border border-gray-200 hover:bg-gray-50 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                  className="p-3 rounded-full border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

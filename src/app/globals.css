@@ -3,6 +3,21 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --card: #ffffff;
+  --card-foreground: #171717;
+  --border: #e5e7eb;
+  --muted: #f3f4f6;
+  --muted-foreground: #6b7280;
+}
+
+.dark {
+  --background: #111827;
+  --foreground: #f3f4f6;
+  --card: #1f2937;
+  --card-foreground: #f3f4f6;
+  --border: #374151;
+  --muted: #1f2937;
+  --muted-foreground: #9ca3af;
 }
 
 @theme inline {
@@ -12,9 +27,19 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* Dark theme removed */
+/* Smooth transitions for theme changes */
+* {
+  transition-property: background-color, border-color, color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
 
-/* Remove body overrides so Tailwind classes control colors */
+/* Disable transitions for motion-reduced users */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
 
 /* Syntax highlighting for code blocks using Prism.js */
 pre[class*="language-"] {
@@ -123,6 +148,12 @@ code:not([class*="language-"]) {
   border: 1px solid #cbd5e1; /* slate-300 */
 }
 
+.dark code:not([class*="language-"]) {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  color: #cbd5e1; /* slate-300 */
+  border: 1px solid #475569; /* slate-600 */
+}
+
 /* Hide scrollbar utility */
 .scrollbar-hide {
   -ms-overflow-style: none;
@@ -131,4 +162,21 @@ code:not([class*="language-"]) {
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+/* 3D flip card animations for TOEIC Guild vocabulary cards */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
 }

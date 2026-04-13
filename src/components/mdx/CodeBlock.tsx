@@ -60,21 +60,21 @@ export default function CodeBlock({ children, className }: CodeBlockProps) {
   return (
     <div className="group relative my-6">
       {/* Header bar with language indicator */}
-      <div className="flex items-center justify-between bg-gradient-to-r from-slate-800 to-slate-700 px-4 py-2 rounded-t-lg">
+      <div className="flex items-center justify-between bg-gradient-to-r from-slate-800 to-slate-700 dark:from-slate-900 dark:to-slate-800 px-4 py-2 rounded-t-lg">
         <div className="flex items-center space-x-2">
           <div className="flex space-x-1">
             <div className="w-3 h-3 bg-red-500 rounded-full"></div>
             <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
             <div className="w-3 h-3 bg-green-500 rounded-full"></div>
           </div>
-          <span className="text-slate-300 text-xs font-medium">
+          <span className="text-slate-300 dark:text-slate-400 text-xs font-medium">
             {language.charAt(0).toUpperCase() + language.slice(1)}
           </span>
         </div>
         <button
           type="button"
           onClick={handleCopy}
-          className="flex items-center space-x-1 rounded-md bg-slate-600 hover:bg-slate-500 px-2 py-1 text-xs text-slate-200 transition-colors"
+          className="flex items-center space-x-1 rounded-md bg-slate-600 hover:bg-slate-500 dark:bg-slate-700 dark:hover:bg-slate-600 px-2 py-1 text-xs text-slate-200 transition-colors"
           aria-label="Copy code"
         >
           <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">

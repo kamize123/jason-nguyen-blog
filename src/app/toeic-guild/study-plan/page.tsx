@@ -1,11 +1,11 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { studyPlanData } from '@/lib/toeic-guild/study-plan-data';
+import { studyPlanData } from '@/lib/toeic-guild/study-plan-data-optimized';
 import { useStudyProgress } from '@/hooks/useStudyProgress';
 import ProgressDashboard from '@/components/toeic-guild/ProgressDashboard';
 import TabNavigation from '@/components/toeic-guild/TabNavigation';
-import StudyPlanCard from '@/components/toeic-guild/StudyPlanCard';
+import EnhancedStudyPlanCard from '@/components/toeic-guild/EnhancedStudyPlanCard';
 
 export default function StudyPlanPage() {
   const [activeTab, setActiveTab] = useState<'month1' | 'month2' | 'month3'>('month1');
@@ -48,10 +48,10 @@ export default function StudyPlanPage() {
                 </h1>
               </div>
               <h2 className="text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white leading-tight mb-4">
-                Tập trung tuyệt đối. <span className="text-blue-600">Kỷ luật sắt.</span>
+                650 → 900+ trong 90 ngày. <span className="text-blue-600">Có thể làm được!</span>
               </h2>
               <p className="text-slate-500 dark:text-gray-400 text-lg font-medium mb-8">
-                Lộ trình 3 giai đoạn đã fix lỗi hiển thị và nâng cấp độ tương phản.
+                Lộ trình được tối ưu bởi giáo viên TOEIC 10+ năm kinh nghiệm. Tập trung vào Listening - chìa khóa đạt 900+.
               </p>
             </div>
 
@@ -73,11 +73,11 @@ export default function StudyPlanPage() {
                 <div className="h-1 bg-slate-300 dark:bg-gray-700 flex-1 rounded-full shadow-inner"></div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {weekData.days.map((task, dIdx) => {
                   const taskId = `${activeTab}-w${wIdx}-d${dIdx}`;
                   return (
-                    <StudyPlanCard
+                    <EnhancedStudyPlanCard
                       key={taskId}
                       task={task}
                       taskId={taskId}

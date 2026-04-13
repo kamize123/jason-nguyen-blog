@@ -6,8 +6,14 @@ export type StudyTask = {
   icon: string;
   task: string;
   desc: string;
+  detailedDesc?: string;
+  methodology?: string[];
+  timeAllocation?: { [key: string]: number };
+  commonMistakes?: string[];
+  instructorTips?: string[];
   checkpoints: string[];
   link: string;
+  additionalLinks?: { title: string; url: string }[];
 };
 
 export type StudyWeek = {

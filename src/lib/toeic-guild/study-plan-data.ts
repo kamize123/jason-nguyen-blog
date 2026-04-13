@@ -231,6 +231,120 @@ export const studyPlanData: StudyPlan = {
           link: "https://study4.com/tests/toeic/ets-toeic-2023-test-1-lc-rc/" 
         }
       ]
+    },
+    {
+      week: "Tuần 6: Part 4 Talks & Advanced Grammar",
+      days: [
+        { 
+          day: "Thứ 2", 
+          type: "Listening", 
+          icon: "headphones", 
+          task: "Part 4 Monologues", 
+          desc: "Luyện nghe bài nói chuyện dài và ghi chú nhanh.", 
+          checkpoints: [
+            "Nghe 10 bài Part 4.",
+            "Practice speed note-taking.",
+            "Target: 27/30 câu đúng."
+          ], 
+          link: "https://study4.com/tests/toeic/ets-toeic-2024-test-2-lc-rc/" 
+        },
+        { 
+          day: "Thứ 3", 
+          type: "Grammar", 
+          icon: "book-open", 
+          task: "Relative Clauses & Conditionals", 
+          desc: "Mệnh đề quan hệ và câu điều kiện nâng cao.", 
+          checkpoints: [
+            "Học 3 loại câu điều kiện.",
+            "Làm 30 câu Part 5-6.",
+            "Target: 28/30 đúng."
+          ], 
+          link: "https://study4.com/grammar/conditional-sentences/" 
+        },
+        { 
+          day: "Thứ 4", 
+          type: "Vocab", 
+          icon: "briefcase", 
+          task: "Manufacturing & Logistics", 
+          desc: "Từ vựng sản xuất và logistics.", 
+          checkpoints: [
+            "Học 45 từ vựng Manufacturing.",
+            "Hoàn thành Quizlet test.",
+            "Viết 8 câu ví dụ."
+          ], 
+          link: "https://quizlet.com/vn/515288258/600-essential-words-for-the-toeic-lesson-2-marketing-flash-cards/" 
+        },
+        { 
+          day: "Thứ 5", 
+          type: "Test", 
+          icon: "award", 
+          task: "Mini Test 2", 
+          desc: "Làm bài test 50 câu LC + 50 câu RC.", 
+          checkpoints: [
+            "Hoàn thành trong 60 phút.",
+            "Không gián đoạn.",
+            "Target: 88/100 đúng."
+          ], 
+          link: "https://study4.com/tests/toeic/ets-toeic-2024-test-2-lc-rc/" 
+        }
+      ]
+    },
+    {
+      week: "Tuần 7: Triple Passages & Inference Questions",
+      days: [
+        { 
+          day: "Thứ 2", 
+          type: "Skill", 
+          icon: "search", 
+          task: "Part 7 Triple Passages", 
+          desc: "Chiến thuật xử lý đoạn văn ba.", 
+          checkpoints: [
+            "Làm 3 bộ đoạn văn ba.",
+            "Thời gian < 5 phút/bộ.",
+            "Đúng 12/15 câu."
+          ], 
+          link: "https://study4.com/tests/toeic/ets-toeic-2023-test-1-lc-rc/" 
+        },
+        { 
+          day: "Thứ 3", 
+          type: "Listening", 
+          icon: "mic", 
+          task: "Inference Questions", 
+          desc: "Câu hỏi suy luận trong LC.", 
+          checkpoints: [
+            "Học 5 dạng câu hỏi suy luận.",
+            "Làm 20 câu inference.",
+            "Target: 17/20 đúng."
+          ], 
+          link: "https://study4.com/tests/toeic/ets-toeic-2024-test-2-lc-rc/" 
+        },
+        { 
+          day: "Thứ 4", 
+          type: "Vocab", 
+          icon: "globe", 
+          task: "Healthcare & Pharmaceuticals", 
+          desc: "Từ vựng y tế và dược phẩm.", 
+          checkpoints: [
+            "Học 40 từ vựng Healthcare.",
+            "Làm bài test đạt > 90%.",
+            "Ghi nhớ 8 collocations."
+          ], 
+          link: "https://quizlet.com/vn/515288258/600-essential-words-for-the-toeic-lesson-2-marketing-flash-cards/" 
+        },
+        { 
+          day: "Thứ 5", 
+          type: "Review", 
+          icon: "zoom-in", 
+          task: "Week 5-7 Review", 
+          desc: "Ôn tập toàn bộ tuần 5-7.", 
+          checkpoints: [
+            "Review tất cả từ vựng đã học.",
+            "Làm lại các câu sai.",
+            "Tổng kết điểm yếu."
+          ], 
+          link: "https://study4.com/tests/toeic/ets-toeic-2024-test-1-lc-rc/" 
+        }
+      ]
     }
   ],
   month3: [
@@ -288,6 +402,120 @@ export const studyPlanData: StudyPlan = {
             "Target: 50/50 câu đúng."
           ], 
           link: "https://study4.com/tests/toeic-part-5-training/" 
+        }
+      ]
+    },
+    {
+      week: "Tuần 10: Full Test Marathon",
+      days: [
+        { 
+          day: "Thứ 2", 
+          type: "Test", 
+          icon: "award", 
+          task: "ETS 2024 - Full Test 2", 
+          desc: "Làm bài test thứ 2 với điều kiện thi thật.", 
+          checkpoints: [
+            "Môi trường yên tĩnh.",
+            "Hoàn thành đúng 120 phút.",
+            "Target: Đạt mức 870+."
+          ], 
+          link: "https://study4.com/tests/toeic/ets-toeic-2024-test-2-lc-rc/" 
+        },
+        { 
+          day: "Thứ 3", 
+          type: "Review", 
+          icon: "zoom-in", 
+          task: "Full Test 2 Analysis", 
+          desc: "Phân tích chi tiết toàn bộ bài test 2.", 
+          checkpoints: [
+            "Review tất cả câu sai.",
+            "Ghi chép pattern lỗi.",
+            "Lập kế hoạch cải thiện."
+          ], 
+          link: "https://study4.com/tests/toeic/ets-toeic-2024-test-2-lc-rc/" 
+        },
+        { 
+          day: "Thứ 4", 
+          type: "Vocab", 
+          icon: "briefcase", 
+          task: "Final Vocabulary Review", 
+          desc: "Ôn tập tổng hợp tất cả từ vựng đã học.", 
+          checkpoints: [
+            "Review 500+ từ vựng.",
+            "Làm bài test tổng hợp.",
+            "Đạt > 95% accuracy."
+          ], 
+          link: "https://quizlet.com/vn/515287661/600-essential-words-for-the-toeic-lesson-1-contracts-flash-cards/" 
+        },
+        { 
+          day: "Thứ 5", 
+          type: "Test", 
+          icon: "award", 
+          task: "ETS 2024 - Full Test 3", 
+          desc: "Làm bài test thứ 3 để đánh giá tiến bộ.", 
+          checkpoints: [
+            "Điều kiện thi thật.",
+            "Hoàn thành đúng 120 phút.",
+            "Target: Đạt mức 890+."
+          ], 
+          link: "https://study4.com/tests/toeic/ets-toeic-2024-test-3-lc-rc/" 
+        }
+      ]
+    },
+    {
+      week: "Tuần 11-12: Final Preparation & Peak Performance",
+      days: [
+        { 
+          day: "Thứ 2", 
+          type: "Review", 
+          icon: "file-search", 
+          task: "Weakness Elimination", 
+          desc: "Tập trung vào điểm yếu còn lại.", 
+          checkpoints: [
+            "Xác định 3 điểm yếu chính.",
+            "Luyện tập chuyên sâu từng điểm.",
+            "Đo lường cải thiện."
+          ], 
+          link: "https://study4.com/tests/toeic/ets-toeic-2024-test-1-lc-rc/" 
+        },
+        { 
+          day: "Thứ 3", 
+          type: "Test", 
+          icon: "award", 
+          task: "Final Mock Test", 
+          desc: "Bài test mô phỏng cuối cùng trước kỳ thi.", 
+          checkpoints: [
+            "Điều kiện giống hệt thi thật.",
+            "Hoàn thành đúng 120 phút.",
+            "Target: Đạt mức 900+."
+          ], 
+          link: "https://study4.com/tests/toeic/ets-toeic-2024-test-4-lc-rc/" 
+        },
+        { 
+          day: "Thứ 4", 
+          type: "Skill", 
+          icon: "zap", 
+          task: "Time Management Mastery", 
+          desc: "Hoàn thiện kỹ năng quản lý thời gian.", 
+          checkpoints: [
+            "Luyện phân bổ thời gian tối ưu.",
+            "Practice pacing strategy.",
+            "Đạt finish đúng giờ 100%."
+          ], 
+          link: "https://www.youtube.com/results?search_query=toeic+time+management+strategy" 
+        },
+        { 
+          day: "Thứ 5", 
+          type: "Review", 
+          icon: "shield-check", 
+          task: "Final Confidence Boost", 
+          desc: "Ôn tập nhẹ nhàng và tăng cường tự tin.", 
+          checkpoints: [
+            "Review key strategies.",
+            "Làm 20 câu dễ để boost confidence.",
+            "Mental preparation for test day."
+          ], 
+          link: "https://study4.com/tests/toeic/ets-toeic-2024-test-1-lc-rc/" 
         }
       ]
     }

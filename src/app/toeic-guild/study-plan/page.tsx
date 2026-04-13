@@ -9,6 +9,7 @@ import EnhancedStudyPlanCard from '@/components/toeic-guild/EnhancedStudyPlanCar
 
 export default function StudyPlanPage() {
   const [activeTab, setActiveTab] = useState<'month1' | 'month2' | 'month3'>('month1');
+  const [collapsedWeeks, setCollapsedWeeks] = useState<Record<string, boolean>>({});
   
   const totalTasks = useMemo(() => {
     return Object.values(studyPlanData).reduce((total, month) => {
@@ -30,6 +31,13 @@ export default function StudyPlanPage() {
   }
 
   const currentMonthData = studyPlanData[activeTab];
+
+  const toggleWeek = (weekKey: string) => {
+    setCollapsedWeeks((prev) => ({
+      ...prev,
+      [weekKey]: !prev[weekKey],
+    }));
+  };
 
   return (
     <div className="min-h-screen pb-20 text-slate-800 dark:text-gray-100 bg-slate-50 dark:bg-gray-900">
@@ -64,31 +72,51 @@ export default function StudyPlanPage() {
         <TabNavigation activeTab={activeTab} onTabChange={setActiveTab} />
 
         <div className="grid grid-cols-1 gap-12">
-          {currentMonthData.map((weekData, wIdx) => (
-            <div key={`${activeTab}-w${wIdx}`} className="space-y-10">
-              <div className="flex items-center gap-6 px-4">
-                <h3 className="text-3xl font-black text-slate-900 dark:text-white tracking-tighter italic uppercase">
-                  {weekData.week}
-                </h3>
-                <div className="h-1 bg-slate-300 dark:bg-gray-700 flex-1 rounded-full shadow-inner"></div>
-              </div>
+          {currentMonthData.map((weekData, wIdx) => {
+            const weekKey = `${activeTab}-w${wIdx}`;
+            const isCollapsed = collapsedWeeks[weekKey] ?? false;
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {weekData.days.map((task, dIdx) => {
-                  const taskId = `${activeTab}-w${wIdx}-d${dIdx}`;
-                  return (
-                    <EnhancedStudyPlanCard
-                      key={taskId}
-                      task={task}
-                      taskId={taskId}
-                      isChecked={isTaskChecked(taskId)}
-                      onToggle={toggleTask}
-                    />
-                  );
-                })}
+            return (
+              <div key={weekKey} className="space-y-10">
+                <button
+                  type="button"
+                  onClick={() => toggleWeek(weekKey)}
+                  aria-expanded={!isCollapsed}
+                  className="w-full flex items-center gap-6 px-4 text-left group"
+                >
+                  <h3 className="text-3xl font-black text-slate-900 dark:text-white tracking-tighter italic uppercase">
+                    {weekData.week}
+                  </h3>
+                  <div className="h-1 bg-slate-300 dark:bg-gray-700 flex-1 rounded-full shadow-inner"></div>
+                  <svg
+                    className={`w-6 h-6 text-slate-500 dark:text-gray-400 transition-transform duration-200 ${isCollapsed ? '' : 'rotate-180'}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                {!isCollapsed && (
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {weekData.days.map((task, dIdx) => {
+                      const taskId = `${activeTab}-w${wIdx}-d${dIdx}`;
+                      return (
+                        <EnhancedStudyPlanCard
+                          key={taskId}
+                          task={task}
+                          taskId={taskId}
+                          isChecked={isTaskChecked(taskId)}
+                          onToggle={toggleTask}
+                        />
+                      );
+                    })}
+                  </div>
+                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </main>
     </div>

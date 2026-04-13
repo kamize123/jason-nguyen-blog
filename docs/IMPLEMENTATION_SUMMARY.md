@@ -109,7 +109,7 @@ Thêm các trường mới cho StudyTask:
 - ✅ Grid layout: 3 columns (thay vì 4) để card rộng hơn
 
 ### 6. Tài Liệu Hướng Dẫn
-**File**: `TOEIC_STUDY_GUIDE.md`
+**File**: `docs/TOEIC_STUDY_GUIDE.md`
 
 **Nội dung (8,000+ từ):**
 - ✅ Tổng quan lộ trình
@@ -207,7 +207,7 @@ Xác định và đưa ra giải pháp cho:
 ### Created (3 files):
 1. `src/lib/toeic-guild/study-plan-data-optimized.ts` - Enhanced study plan data
 2. `src/components/toeic-guild/EnhancedStudyPlanCard.tsx` - New component with 3 tabs
-3. `TOEIC_STUDY_GUIDE.md` - Comprehensive user guide (8,000+ words)
+3. `docs/TOEIC_STUDY_GUIDE.md` - Comprehensive user guide (8,000+ words)
 
 ### Modified (2 files):
 1. `src/lib/toeic-guild/types.ts` - Added new fields to StudyTask type
@@ -219,7 +219,7 @@ Xác định và đưa ra giải pháp cho:
 1. ✅ Truy cập http://localhost:3000/toeic-guild/study-plan
 2. ✅ Xem Tuần 1 với enhanced descriptions
 3. ✅ Click vào các tabs (Tổng quan, Chi tiết, Tips)
-4. ✅ Đọc `TOEIC_STUDY_GUIDE.md` để hiểu cách sử dụng
+4. ✅ Đọc `docs/TOEIC_STUDY_GUIDE.md` để hiểu cách sử dụng
 
 ### Short-term (1-2 ngày):
 1. ⏳ Hoàn thiện Tuần 2-3 (Month 1) với enhanced descriptions

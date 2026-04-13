@@ -56,6 +56,23 @@ export default function ToeicGuildPage() {
           </p>
         </div>
 
+        <div className="max-w-4xl mx-auto mb-14 rounded-2xl border-2 border-amber-200 bg-amber-50/90 p-6 text-left shadow-md dark:border-amber-700/60 dark:bg-amber-950/40">
+          <p className="text-sm font-bold uppercase tracking-wide text-amber-800 dark:text-amber-300 mb-2">
+            Nhắc nhở — đọc trước khi bắt đầu
+          </p>
+          <p className="text-slate-800 dark:text-gray-200 mb-4 leading-relaxed">
+            Bản hướng dẫn chi tiết lộ trình <strong>650 → 900+</strong> (listening, grammar, sách &amp; web, chiến lược theo tuần)
+            nằm ở trang riêng. Hãy mở ít nhất một lần để nắm &quot;3 chìa khóa&quot; và lịch ôn — sẽ giúp bạn dùng đúng các phần bên dưới.
+          </p>
+          <Link
+            href="/toeic-guild/guide"
+            className="inline-flex items-center gap-2 rounded-xl bg-amber-600 px-5 py-3 text-sm font-bold text-white shadow hover:bg-amber-700 transition-colors"
+          >
+            Đọc hướng dẫn lộ trình đầy đủ
+            <Icon name="arrow-right-circle" className="w-5 h-5" />
+          </Link>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {features.map((feature) => {
             const colorClasses = {

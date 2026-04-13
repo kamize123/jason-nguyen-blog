@@ -231,7 +231,7 @@
                     });
                     
                     weekSection.appendChild(grid);
-                    container.appendChild(weekSection); 
+                    container.appendChild(weekSection);
                 });
             });
             loadProgress();

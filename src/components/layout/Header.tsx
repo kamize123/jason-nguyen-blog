@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import SearchBar from '@/components/SearchBar';
 import ThemeToggle from '@/components/ui/ThemeToggle';
+import NavOtherMenu from '@/components/layout/NavOtherMenu';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -12,8 +13,12 @@ const navigation = [
   { name: 'List 100', href: '/collections' },
   { name: 'Products', href: '/products' },
   { name: 'Blog', href: '/blog' },
-  { name: 'TOEIC Guild', href: '/toeic-guild' },
   { name: 'About', href: '/about#career' },
+];
+
+const otherNavItems = [
+  { name: 'TOEIC Guild', href: '/toeic-guild' },
+  { name: 'Hướng dẫn lộ trình TOEIC', href: '/toeic-guild/guide' },
 ];
 
 export default function Header() {
@@ -57,6 +62,7 @@ export default function Header() {
                 {item.name}
               </Link>
             ))}
+            <NavOtherMenu items={otherNavItems} variant="desktop" />
             <ThemeToggle />
           </nav>
 
@@ -111,6 +117,11 @@ export default function Header() {
                   {item.name}
                 </Link>
               ))}
+              <NavOtherMenu
+                items={otherNavItems}
+                variant="mobile"
+                onNavigate={() => setMobileMenuOpen(false)}
+              />
               <div className="px-3 py-2 flex items-center gap-2">
                 <span className="text-sm text-gray-600 dark:text-gray-400">Theme:</span>
                 <ThemeToggle />

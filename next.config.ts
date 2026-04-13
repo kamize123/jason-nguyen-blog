@@ -10,6 +10,8 @@ const withMDX = createMDX({
 });
 
 const nextConfig: NextConfig = {
+  // Required for next-mdx-remote with Turbopack (see package README)
+  transpilePackages: ["next-mdx-remote"],
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
   reactStrictMode: true,
   turbopack: {

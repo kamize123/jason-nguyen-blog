@@ -1,5 +1,123 @@
 # Hướng Dẫn Sử Dụng Lộ Trình TOEIC 650 → 900+
 
+## 📚 Tài Nguyên Chi Tiết
+
+### Hệ thống phân loại tài nguyên
+
+Từ bây giờ, mọi tài nguyên trong lộ trình đều được **phân loại rõ ràng** với **badge màu sắc** và **thông tin chi tiết**:
+
+- **🔵 SÁCH** (màu xanh dương) - Tài liệu trả phí cần mua
+- **🟢 WEB** (màu xanh lá) - Website/blog miễn phí
+- **🔴 VIDEO** (màu đỏ) - YouTube videos
+- **🟣 AUDIO** (màu tím) - Podcasts, audio materials
+- **🟠 APP** (màu cam) - Ứng dụng (Quizlet, Anki, etc.)
+- **⚫ PDF** (màu xám) - Tài liệu PDF download
+
+### Thông tin bổ sung cho mỗi resource
+
+Mỗi tài nguyên hiển thị đầy đủ:
+- ✓ **Miễn phí** hay 💰 **Trả phí**
+- ⏱️ **Thời gian ước tính** (ví dụ: ~15 phút)
+- 📖 **Phần cần đọc** (ví dụ: "Chapters 1-3", "Part 5 section")
+- 🎯 **Độ khó** (Cơ bản / Trung cấp / Nâng cao)
+- 🌐 **Ngôn ngữ** (🇻🇳 Tiếng Việt / 🇬🇧 English / 🌐 Song ngữ)
+- 💡 **Lưu ý quan trọng** (cách sử dụng, yêu cầu đăng ký, etc.)
+
+### Danh sách tài nguyên chính
+
+#### 🔵 SÁCH (Cần mua - Trả phí)
+
+**ETS TOEIC Official Test Collection 2024 (Sách 1)**
+- **Giá**: ~$40-50 USD (880,000-1,100,000 VND)
+- **Nơi mua**: Amazon, ETS.org, Tiki, Shopee (tìm "ETS TOEIC 2024")
+- **Nội dung**: 2 bài test chính thức từ ETS
+- **Cách sử dụng**: 
+  - Test 1 cho baseline (Tuần 2, Thứ 7)
+  - Test 2 cho final mock (Tuần 10-11)
+- **Độ khó**: Tương đương thi thật
+- **Notes**: Đây là tài liệu QUAN TRỌNG NHẤT. Bắt buộc có để đánh giá chính xác trình độ.
+
+**Hackers TOEIC LC/RC (Sách 2 - Korean series)**
+- **Giá**: ~$30-35 USD
+- **Nơi mua**: Amazon, Shopee (search "Hackers TOEIC")
+- **Nội dung**: Chiến thuật từng Part + bài tập phong phú
+- **Cách sử dụng**: Tham khảo khi cần thêm practice cho Part yếu
+- **Độ khó**: Intermediate đến Advanced
+- **Notes**: Optional - chỉ mua nếu muốn thêm practice sau khi làm xong Study4
+
+#### 🟢 WEB (Miễn phí)
+
+**Study4.com - Grammar Hub**
+- **URL**: https://study4.com/hoc-tieng-anh/ngu-phap/
+- **Nội dung**: 12 thì, bị động, giới từ, từ loại, liên từ
+- **Thời gian**: 15-30 phút/chủ đề
+- **Tuần sử dụng**: 1, 2, 3, 5, 7
+- **Ngôn ngữ**: 🇻🇳 Tiếng Việt
+- **Notes**: ⚠️ Cần đăng ký tài khoản Study4 (miễn phí). Đây là thay thế cho nhiều link cũ bị lỗi 404.
+
+**Study4.com - TOEIC Practice Hub**
+- **URL**: https://study4.com/luyen-thi-toeic/
+- **Nội dung**: Practice tests cho tất cả Part 1-7
+- **Thời gian**: 10-30 phút/practice set
+- **Tuần sử dụng**: 1-12 (hàng ngày)
+- **Ngôn ngữ**: 🌐 Song ngữ (câu hỏi EN, giải thích có VN)
+- **Notes**: ⚠️ Đăng ký Study4 (miễn phí). Chọn Part → Filter theo topic → Làm 20 câu.
+
+**EnglishClub - Business English Vocabulary**
+- **URL**: https://www.englishclub.com/business-english/vocabulary.php
+- **Nội dung**: Collocations, phrasal verbs, business terms
+- **Thời gian**: 10-15 phút
+- **Tuần sử dụng**: 1, 2, 5
+- **Ngôn ngữ**: 🇬🇧 English
+- **Notes**: Browse "Collocations" section cho các cụm từ như "sign agreement", "negotiate terms"
+
+#### 🟠 APP (Miễn phí cơ bản, Premium tùy chọn)
+
+**Quizlet - 600 Essential Words for TOEIC**
+- **URL**: https://quizlet.com/vn/ (search "600 essential words TOEIC")
+- **Nội dung**: 600 từ vựng chia 12 lessons theo chủ đề
+- **Thời gian**: 20 phút/lesson (40 từ)
+- **Tuần sử dụng**: 1-8 (vocabulary days)
+- **Cách dùng**: 
+  - Tạo tài khoản Quizlet (miễn phí)
+  - Tìm deck "600 Essential Words Lesson 1: Contracts"
+  - Học bằng chế độ Learn → Test
+- **Premium**: $35.99/năm (optional - core features free)
+- **Notes**: Lessons 1, 2 đã verify working. Lesson 3 (Finance) bị lỗi → search alternative deck.
+
+**Anki - Spaced Repetition**
+- **URL**: https://apps.ankiweb.net/
+- **Nội dung**: TOEIC 3000 Essential Words (shared deck)
+- **Thời gian**: 15-20 phút/ngày
+- **Tuần sử dụng**: 1-12 (long-term vocabulary retention)
+- **Cách dùng**:
+  - Download Anki desktop (miễn phí)
+  - Hoặc iOS app ($24.99 one-time) / Android (miễn phí)
+  - Search shared decks: "TOEIC 3000" hoặc "TOEIC Vocabulary"
+- **Notes**: Spaced repetition rất hiệu quả cho từ vựng dài hạn. Cài app + download deck.
+
+#### 🔴 VIDEO (YouTube - Miễn phí)
+
+**Video: 12 Thì Tiếng Anh Chi Tiết**
+- **URL**: https://www.youtube.com/watch?v=qjg_GUqU5gQ
+- **Thời gian**: ~20 phút
+- **Tuần**: 1
+- **Ngôn ngữ**: 🇻🇳 Tiếng Việt
+- **Notes**: Xem trước khi học lý thuyết 12 thì để có overview
+
+**YouTube Generic Searches** (thay thế cho các channel bị xóa)
+- ⚠️ Nhiều channel TOEIC cũ đã bị xóa/đổi tên (ví dụ: TOEIC with Junia)
+- **Thay thế**: Tìm kiếm YouTube với keywords:
+  - "TOEIC Part 1 strategy" (cho Listening Part 1)
+  - "TOEIC Part 2 wh questions" (cho Part 2)
+  - "TOEIC Part 3 conversations" (cho Part 3)
+  - "shadowing technique english" (cho Shadowing practice)
+  - "speed reading TOEIC Part 7" (cho Reading speed)
+- **Chọn video**: >10K views, upload <2 years, rating cao
+- **Notes**: Không tin vào một channel cụ thể. Tìm kiếm mới khi cần.
+
+---
+
 ## 📊 Tổng Quan
 
 Lộ trình này được thiết kế dựa trên đánh giá chuyên sâu từ giáo viên TOEIC 10+ năm kinh nghiệm, tối ưu hóa cho học viên:
@@ -23,7 +141,7 @@ Lộ trình này được thiết kế dựa trên đánh giá chuyên sâu từ
 
 ## 🔑 3 Chìa Khóa Thành Công
 
-### 1. LISTENING HÀNG NGÀY (60 phút/ngày)
+### Chìa Khóa 1: LISTENING HÀNG NGÀY (60 phút/ngày)
 **Đây là yếu tố QUAN TRỌNG NHẤT** để đạt 900+
 
 - **30 phút**: Luyện Part 3-4 (hội thoại & bài nói)
@@ -35,14 +153,14 @@ Lộ trình này được thiết kế dựa trên đánh giá chuyên sâu từ
 - Part 3-4 chiếm 60/100 câu LC
 - Cải thiện listening = ROI cao nhất
 
-### 2. GRAMMAR SPRINT (Tuần 1-4)
+### Chìa Khóa 2: GRAMMAR SPRINT (Tuần 1-4)
 **Làm rõ ngữ pháp "rỉ sét"** trong 1 tháng đầu
 
 - **30 phút/ngày**: Ôn lý thuyết + làm bài tập
 - **Mục tiêu**: 38-40/40 câu Part 5-6 đúng
 - **Trọng tâm**: 12 thì, bị động, từ loại, giới từ
 
-### 3. FULL TEST ĐỀU ĐẶN
+### Chìa Khóa 3: FULL TEST ĐỀU ĐẶN
 **Kiểm tra tiến bộ mỗi 2 tuần**
 
 - **Tuần 2**: Baseline test (đo điểm xuất phát)
@@ -51,19 +169,19 @@ Lộ trình này được thiết kế dựa trên đánh giá chuyên sâu từ
 
 ## 📚 Sách Khuyến Nghị (BẮT BUỘC)
 
-### 1. ETS TOEIC Official Test Prep 2024 (~$40)
+### Sách 1: ETS TOEIC Official Test Prep 2024 (~$40)
 **PHẢI MUA** - Đây là tài liệu chuẩn nhất
 - 2 full tests chính thức từ ETS
 - Đáp án chi tiết
 - Dùng cho baseline test (tuần 2) và final test (tuần 10-11)
 
-### 2. Hackers TOEIC Listening (~$30)
+### Sách 2: Hackers TOEIC Listening (~$30)
 **Rất khuyến khích** - Tập trung vào điểm yếu
 - 1000+ câu luyện Part 3-4
 - Phương pháp có hệ thống
 - Dùng hàng ngày tuần 2-8
 
-### 3. 600 Essential Words for TOEIC (~$15)
+### Sách 3: 600 Essential Words for TOEIC (~$15)
 **Nên có** - Từ vựng cốt lõi
 - 600 từ quan trọng nhất
 - Kết hợp với Quizlet

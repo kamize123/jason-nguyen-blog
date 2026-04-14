@@ -88,10 +88,55 @@ export const studyPlanData: StudyPlan = {
             "✅ Giải thích được sự khác biệt Present Perfect vs. Simple Past bằng ví dụ của mình",
             "✅ Học thuộc bảng time markers"
           ], 
+          // Legacy fields (for backward compatibility)
           link: "https://study4.com/grammar/12-thi-trong-tieng-anh/",
           additionalLinks: [
             { title: "Video: 12 Thì Tiếng Anh Chi Tiết", url: "https://www.youtube.com/watch?v=qjg_GUqU5gQ" },
             { title: "Bài tập Part 5 - Động từ", url: "https://study4.com/tests/toeic-part-5-training/" }
+          ],
+          // Enhanced resource fields
+          primaryResource: {
+            title: "12 Thì Tiếng Anh - Study4 Grammar Hub",
+            url: "https://study4.com/hoc-tieng-anh/ngu-phap/",
+            metadata: {
+              type: 'web',
+              isFree: true,
+              estimatedTime: 15,
+              difficulty: 'beginner',
+              chapters: 'Đọc phần 12 Thì, tập trung Present Perfect & Past Perfect',
+              language: 'vi',
+              notes: 'Link gốc bị lỗi 404. Dùng Grammar Hub → chọn "12 Thì". Cần đăng ký tài khoản Study4 (miễn phí).',
+              status: 'working'
+            }
+          },
+          additionalResources: [
+            {
+              title: "Video: 12 Thì Tiếng Anh Chi Tiết",
+              url: "https://www.youtube.com/watch?v=qjg_GUqU5gQ",
+              metadata: {
+                type: 'video',
+                isFree: true,
+                estimatedTime: 20,
+                difficulty: 'beginner',
+                language: 'vi',
+                notes: 'Xem trước khi học lý thuyết để có overview',
+                status: 'working'
+              }
+            },
+            {
+              title: "Bài tập Part 5 - Study4 Practice Hub",
+              url: "https://study4.com/luyen-thi-toeic/",
+              metadata: {
+                type: 'web',
+                isFree: true,
+                estimatedTime: 20,
+                difficulty: 'intermediate',
+                chapters: 'Chọn Part 5, filter theo "Động từ"',
+                language: 'both',
+                notes: 'Link gốc lỗi 404. Dùng Practice Hub → Part 5 → 20 câu về thì/thể. Cần đăng ký Study4.',
+                status: 'working'
+              }
+            }
           ]
         },
         { 
@@ -169,10 +214,56 @@ export const studyPlanData: StudyPlan = {
             "✅ Ghi nhớ 10 collocations quan trọng",
             "✅ Lên lịch ôn lại sau 3 ngày"
           ], 
+          // Legacy fields
           link: "https://quizlet.com/vn/515287661/600-essential-words-for-the-toeic-lesson-1-contracts-flash-cards/",
           additionalLinks: [
             { title: "Anki Deck: TOEIC Vocabulary 3000", url: "https://ankiweb.net/shared/decks/toeic" },
             { title: "Business English Collocations", url: "https://www.englishclub.com/business-english/collocations.htm" }
+          ],
+          // Enhanced resources
+          primaryResource: {
+            title: "600 Essential Words - Lesson 1: Contracts",
+            url: "https://quizlet.com/vn/515287661/600-essential-words-for-the-toeic-lesson-1-contracts-flash-cards/",
+            metadata: {
+              type: 'app',
+              isFree: true,
+              estimatedTime: 20,
+              difficulty: 'intermediate',
+              chapters: 'Học 40 từ vựng, dùng chế độ Learn → Test',
+              language: 'both',
+              notes: 'Tạo tài khoản Quizlet miễn phí. Premium không bắt buộc. Sử dụng chức năng Learn (miễn phí) và Test.',
+              status: 'working'
+            }
+          },
+          additionalResources: [
+            {
+              title: "Anki Shared Decks - TOEIC Vocabulary",
+              url: "https://ankiweb.net/shared/decks/toeic",
+              metadata: {
+                type: 'app',
+                isFree: true,
+                estimatedTime: 15,
+                difficulty: 'intermediate',
+                chapters: 'Download deck "TOEIC 3000 Essential Words"',
+                language: 'both',
+                notes: 'Cài Anki desktop (miễn phí) hoặc iOS app ($24.99 one-time). Android miễn phí. Spaced repetition rất hiệu quả.',
+                status: 'working'
+              }
+            },
+            {
+              title: "Business English Vocabulary Hub - EnglishClub",
+              url: "https://www.englishclub.com/business-english/vocabulary.php",
+              metadata: {
+                type: 'web',
+                isFree: true,
+                estimatedTime: 10,
+                difficulty: 'intermediate',
+                chapters: 'Browse Collocations section',
+                language: 'en',
+                notes: 'Link gốc lỗi 404. Dùng vocabulary hub → tìm collocations (sign agreement, negotiate terms).',
+                status: 'working'
+              }
+            }
           ]
         },
         { 
@@ -282,10 +373,55 @@ export const studyPlanData: StudyPlan = {
             "✅ Hoàn thành tất cả câu với tự tin (không đoán)",
             "✅ Tạo trap log cho mọi lỗi sai"
           ], 
+          // Legacy fields
           link: "https://study4.com/tests/toeic/ets-toeic-2024-test-1-lc-rc/",
           additionalLinks: [
             { title: "Video: Part 1 Strategy - TOEIC with Junia", url: "https://www.youtube.com/@TOEICwithJunia" },
             { title: "Part 1 Practice Tests", url: "https://study4.com/tests/toeic-part-1-training/" }
+          ],
+          // Enhanced resources
+          primaryResource: {
+            title: "Part 1 Practice - Study4 TOEIC Hub",
+            url: "https://study4.com/luyen-thi-toeic/",
+            metadata: {
+              type: 'web',
+              isFree: true,
+              estimatedTime: 30,
+              difficulty: 'beginner',
+              chapters: 'Chọn Listening → Part 1 → Làm 30 câu',
+              language: 'both',
+              notes: 'Link gốc ETS test lỗi 404. Dùng Practice Hub → Part 1. Làm nhiều set khác nhau. Cần đăng ký Study4 (miễn phí).',
+              status: 'working'
+            }
+          },
+          additionalResources: [
+            {
+              title: "Video: TOEIC Part 1 Strategy",
+              url: "https://www.youtube.com/results?search_query=toeic+listening+part+1+strategy",
+              metadata: {
+                type: 'video',
+                isFree: true,
+                estimatedTime: 15,
+                difficulty: 'beginner',
+                language: 'en',
+                notes: 'Channel "TOEIC with Junia" đã bị xóa. Tìm video với >10K views, upload <2 years. Focus: being trap, photo types.',
+                status: 'working'
+              }
+            },
+            {
+              title: "ETS Official Guide - Part 1 Sample",
+              url: "https://www.ets.org/toeic/test-takers/listening-reading/prepare/sample-questions.html",
+              metadata: {
+                type: 'web',
+                isFree: true,
+                estimatedTime: 10,
+                difficulty: 'beginner',
+                chapters: 'Part 1 sample questions only',
+                language: 'en',
+                notes: 'Sample từ ETS chính thức. Chất lượng cao nhất, giống thi thật.',
+                status: 'working'
+              }
+            }
           ]
         },
         { 
@@ -401,10 +537,55 @@ Làm 10 câu ví dụ để nhận diện vị trí
             "✅ Tạo flashcards và lên lịch ôn hàng ngày",
             "✅ Tự tin nhận diện vị trí cần điền chỉ bằng mắt"
           ], 
+          // Legacy fields
           link: "https://study4.com/tests/toeic-part-5-training/",
           additionalLinks: [
             { title: "Video: Word Form Tricks - TOEIC", url: "https://www.youtube.com/results?search_query=word+form+toeic+tricks" },
             { title: "Flashcards: 20 Common Suffixes", url: "https://quizlet.com/search?query=toeic%20suffixes&type=sets" }
+          ],
+          // Enhanced resources
+          primaryResource: {
+            title: "Part 5 Word Form Practice - Study4 Hub",
+            url: "https://study4.com/luyen-thi-toeic/",
+            metadata: {
+              type: 'web',
+              isFree: true,
+              estimatedTime: 25,
+              difficulty: 'intermediate',
+              chapters: 'Chọn Part 5 → Filter "Từ loại" (Word Form) → Làm 30 câu',
+              language: 'both',
+              notes: 'Link gốc lỗi 404. Dùng Practice Hub. Ép thời gian <10s/câu. Cần đăng ký Study4 (miễn phí).',
+              status: 'working'
+            }
+          },
+          additionalResources: [
+            {
+              title: "Video: Word Form Tricks & Speed Techniques",
+              url: "https://www.youtube.com/results?search_query=word+form+toeic+tricks",
+              metadata: {
+                type: 'video',
+                isFree: true,
+                estimatedTime: 15,
+                difficulty: 'intermediate',
+                language: 'en',
+                notes: 'Chọn video focus: suffix patterns, position recognition, <10s strategy.',
+                status: 'working'
+              }
+            },
+            {
+              title: "Quizlet: TOEIC Suffixes Flashcards",
+              url: "https://quizlet.com/search?query=toeic%20suffixes&type=sets",
+              metadata: {
+                type: 'app',
+                isFree: true,
+                estimatedTime: 10,
+                difficulty: 'beginner',
+                chapters: 'Chọn deck có 20+ suffixes',
+                language: 'both',
+                notes: 'Học thuộc 20 hậu tố: -tion, -ment, -ly, -ive, -ful, etc. Ôn hàng ngày.',
+                status: 'working'
+              }
+            }
           ]
         },
         {
@@ -501,10 +682,55 @@ Làm 10 câu ví dụ để nhận diện vị trí
             "✅ Ngữ điệu khớp 90% với audio gốc",
             "✅ Thu âm và so sánh với gốc"
           ],
+          // Legacy fields
           link: "https://study4.com/tests/toeic/ets-toeic-2024-test-1-lc-rc/",
           additionalLinks: [
             { title: "Video: How to Shadow Effectively", url: "https://www.youtube.com/results?search_query=shadowing+technique+english" },
             { title: "Shadowing Practice Materials", url: "https://www.youtube.com/@TOEICwithJunia" }
+          ],
+          // Enhanced resources
+          primaryResource: {
+            title: "Part 3/4 Audio for Shadowing - Study4 Hub",
+            url: "https://study4.com/luyen-thi-toeic/",
+            metadata: {
+              type: 'web',
+              isFree: true,
+              estimatedTime: 20,
+              difficulty: 'intermediate',
+              chapters: 'Chọn Listening → Part 3 hoặc Part 4 → Pick 1 conversation/talk',
+              language: 'both',
+              notes: 'Link gốc lỗi 404. Dùng Practice Hub. Chọn đoạn 30-60s, độ khó vừa. Nghe 3 lần trước khi shadow. Cần đăng ký Study4.',
+              status: 'working'
+            }
+          },
+          additionalResources: [
+            {
+              title: "Video: Shadowing Technique Tutorial",
+              url: "https://www.youtube.com/results?search_query=shadowing+technique+english",
+              metadata: {
+                type: 'video',
+                isFree: true,
+                estimatedTime: 10,
+                difficulty: 'beginner',
+                language: 'en',
+                notes: 'Xem TRƯỚC khi bắt đầu shadow. Focus: delay timing, weak forms, intonation matching.',
+                status: 'working'
+              }
+            },
+            {
+              title: "BBC Learning English - 6 Minute English",
+              url: "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english",
+              metadata: {
+                type: 'audio',
+                isFree: true,
+                estimatedTime: 20,
+                difficulty: 'intermediate',
+                chapters: 'Chọn episode gần đây, có transcript',
+                language: 'en',
+                notes: 'Alternative cho shadowing. Natural British English. Download transcript để check.',
+                status: 'working'
+              }
+            }
           ]
         }
       ]

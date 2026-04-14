@@ -5,6 +5,8 @@ import { StudyTask } from '@/lib/toeic-guild/types';
 import { getCategoryColors } from '@/lib/toeic-guild/utils';
 import CategoryBadge from './CategoryBadge';
 import Icon from './Icon';
+import ResourceCard from './ResourceCard';
+import ResourceList from './ResourceList';
 
 type EnhancedStudyPlanCardProps = {
   task: StudyTask;
@@ -202,8 +204,22 @@ export default function EnhancedStudyPlanCard({ task, taskId, isChecked, onToggl
           </div>
         </details>
         
-        <div className="space-y-2">
-          {task.link && task.link !== '#' && (
+        <div className="space-y-3">
+          {/* Enhanced resources (new format with metadata) */}
+          {task.primaryResource && (
+            <ResourceCard link={task.primaryResource} isPrimary />
+          )}
+          
+          {task.additionalResources && task.additionalResources.length > 0 && (
+            <ResourceList 
+              resources={task.additionalResources} 
+              title="Tài liệu bổ sung"
+              compact
+            />
+          )}
+          
+          {/* Legacy fallback (old format without metadata) */}
+          {!task.primaryResource && task.link && task.link !== '#' && (
             <a 
               href={task.link} 
               target="_blank" 
@@ -215,7 +231,7 @@ export default function EnhancedStudyPlanCard({ task, taskId, isChecked, onToggl
             </a>
           )}
           
-          {task.additionalLinks && task.additionalLinks.length > 0 && (
+          {!task.additionalResources && task.additionalLinks && task.additionalLinks.length > 0 && (
             <details className="group">
               <summary className="text-[10px] font-bold text-slate-500 dark:text-gray-400 cursor-pointer hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center gap-1">
                 <Icon name="book-open" className="w-3 h-3" />

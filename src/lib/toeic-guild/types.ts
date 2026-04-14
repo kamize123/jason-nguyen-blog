@@ -1,5 +1,33 @@
 export type TaskType = 'Grammar' | 'Vocab' | 'Listening' | 'Skill' | 'Test' | 'Review';
 
+// Resource type classification
+export type ResourceType = 'book' | 'web' | 'video' | 'app' | 'audio' | 'pdf';
+
+// Resource difficulty level
+export type ResourceDifficulty = 'beginner' | 'intermediate' | 'advanced';
+
+// Resource language
+export type ResourceLanguage = 'vi' | 'en' | 'both';
+
+// Enhanced resource metadata
+export type ResourceMetadata = {
+  type: ResourceType;
+  isFree: boolean;
+  estimatedTime?: number; // minutes
+  difficulty?: ResourceDifficulty;
+  chapters?: string; // e.g., "Chapters 1-3", "Part 5 section", "Toàn bộ"
+  language?: ResourceLanguage;
+  notes?: string; // Additional usage instructions
+  status?: 'working' | 'broken' | 'archived'; // Link health status
+};
+
+// Enhanced link with metadata
+export type EnhancedLink = {
+  title: string;
+  url: string;
+  metadata: ResourceMetadata;
+};
+
 export type StudyTask = {
   day: string;
   type: TaskType;
@@ -12,8 +40,14 @@ export type StudyTask = {
   commonMistakes?: string[];
   instructorTips?: string[];
   checkpoints: string[];
+  
+  // Legacy fields (keep for backward compatibility)
   link: string;
   additionalLinks?: { title: string; url: string }[];
+  
+  // Enhanced resource fields
+  primaryResource?: EnhancedLink;
+  additionalResources?: EnhancedLink[];
 };
 
 export type StudyWeek = {

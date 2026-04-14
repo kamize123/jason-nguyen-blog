@@ -18,7 +18,6 @@ const navigation = [
 
 const otherNavItems = [
   { name: 'TOEIC Guild', href: '/toeic-guild' },
-  { name: 'Hướng dẫn lộ trình TOEIC', href: '/toeic-guild/guide' },
 ];
 
 export default function Header() {
